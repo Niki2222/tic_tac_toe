@@ -5,13 +5,13 @@ let winX = 0;
 let win0 = 0;
 
 function startPlayerX() {
-    document.getElementsByClassName('.btn-primary x');
+    document.getElementById('btnX');
     mark = "X";
     playGame();
 }
 
 function startPlayerY() {
-    document.getElementsByClassName('.btn-primary y');
+    document.getElementById('btn0');
     mark = "0";
     playGame();
 }
@@ -78,7 +78,7 @@ function playGame() {
     }
 }
     
-function reset_all() {
+function resetAll() {
     divs.forEach(element => {
         element.innerText = "";
     });
