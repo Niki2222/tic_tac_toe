@@ -1,0 +1,14 @@
+.container {
+    width: 30rem;
+}
+.card {
+    border: none;
+}
+.col {
+    border: 1px solid black;
+    height: 6rem;
+    line-height: 6rem;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 3rem;
+}
