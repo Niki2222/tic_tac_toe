@@ -31,40 +31,40 @@ function playGame() {
             ++count;
             console.log(count, "first time play");
 
-            if ((divs[0].innerHTML === "X" && (divs[0].innerHTML === divs[1].innerHTML 
-                && divs[1].innerHTML === divs[2].innerHTML 
-                || divs[0].innerHTML === divs[3].innerHTML 
-                && divs[3].innerHTML === divs[6].innerHTML
-                || divs[0].innerHTML === divs[4].innerHTML  
-                && divs[4].innerHTML === divs[8].innerHTML))
-                || (divs[1].innerHTML === "X" && divs[1].innerHTML === divs[4].innerHTML 
-                && divs[4].innerHTML === divs[7].innerHTML)
-                || (divs[2].innerHTML === "X" && (divs[2].innerHTML === divs[4].innerHTML 
-                && divs[4].innerHTML === divs[6].innerHTML
-                || divs[2].innerHTML === divs[5].innerHTML 
-                && divs[5].innerHTML === divs[8].innerHTML))
-                || (divs[3].innerHTML === "X" && divs[3].innerHTML === divs[4].innerHTML 
-                && divs[4].innerHTML === divs[5].innerHTML)
-                || (divs[6].innerHTML === "X" && divs[6].innerHTML === divs[7].innerHTML 
-                && divs[7].innerHTML === divs[8].innerHTML)) {
+            if ((divs[0].innerText === "X" && (divs[0].innerText === divs[1].innerText 
+                && divs[1].innerText === divs[2].innerText 
+                || divs[0].innerText === divs[3].innerText 
+                && divs[3].innerText === divs[6].innerText
+                || divs[0].innerText === divs[4].innerText  
+                && divs[4].innerText === divs[8].innerText))
+                || (divs[1].innerText === "X" && divs[1].innerText === divs[4].innerText 
+                && divs[4].innerText === divs[7].innerText)
+                || (divs[2].innerText === "X" && (divs[2].innerText === divs[4].innerText 
+                && divs[4].innerText === divs[6].innerText
+                || divs[2].innerText === divs[5].innerText 
+                && divs[5].innerText === divs[8].innerText))
+                || (divs[3].innerText === "X" && divs[3].innerText === divs[4].innerText 
+                && divs[4].innerText === divs[5].innerText)
+                || (divs[6].innerText === "X" && divs[6].innerText === divs[7].innerText 
+                && divs[7].innerText === divs[8].innerText)) {
                 winX = 1;
             } 
-            if ((divs[0].innerHTML === "0" && (divs[0].innerHTML === divs[1].innerHTML 
-                && divs[1].innerHTML === divs[2].innerHTML 
-                || divs[0].innerHTML === divs[3].innerHTML 
-                && divs[3].innerHTML === divs[6].innerHTML
-                || divs[0].innerHTML === divs[4].innerHTML 
-                && divs[4].innerHTML === divs[8].innerHTML))
-                || (divs[1].innerHTML === "0" && divs[1].innerHTML === divs[4].innerHTML 
-                && divs[4].innerHTML === divs[7].innerHTML)
-                || (divs[2].innerHTML === "0" && (divs[2].innerHTML === divs[4].innerHTML 
-                && divs[4].innerHTML === divs[6].innerHTML
-                || divs[2].innerHTML === divs[5].innerHTML 
-                && divs[5].innerHTML === divs[8].innerHTML))
-                || (divs[3].innerHTML === "0" && divs[3].innerHTML === divs[4].innerHTML 
-                && divs[4].innerHTML === divs[5].innerHTML)
-                || (divs[6].innerHTML === "0" && divs[6].innerHTML === divs[7].innerHTML 
-                && divs[7].innerHTML === divs[8].innerHTML)) {
+            if ((divs[0].innerText === "0" && (divs[0].innerText === divs[1].innerText 
+                && divs[1].innerText === divs[2].innerText 
+                || divs[0].innerText === divs[3].innerText 
+                && divs[3].innerText === divs[6].innerText
+                || divs[0].innerText === divs[4].innerText 
+                && divs[4].innerText === divs[8].innerText))
+                || (divs[1].innerText === "0" && divs[1].innerText === divs[4].innerText 
+                && divs[4].innerText === divs[7].innerText)
+                || (divs[2].innerText === "0" && (divs[2].innerText === divs[4].innerText 
+                && divs[4].innerText === divs[6].innerText
+                || divs[2].innerText === divs[5].innerText 
+                && divs[5].innerText === divs[8].innerText))
+                || (divs[3].innerText === "0" && divs[3].innerText === divs[4].innerText 
+                && divs[4].innerText === divs[5].innerText)
+                || (divs[6].innerText === "0" && divs[6].innerText === divs[7].innerText 
+                && divs[7].innerText === divs[8].innerText)) {
                 win0 = 1;
             } 
             if (winX === 1) {
@@ -76,6 +76,9 @@ function playGame() {
             }
         });
     }
+    if (winX === 1 || win0 === 1 || count === 9) {
+        return;
+    } 
 }
     
 function resetAll() {
