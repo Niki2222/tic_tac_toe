@@ -70,7 +70,6 @@ function findWinner() {
 }
 
 function removeEvents() {
-    gameInProgress = false;
     divs.forEach(elem => {
         elem.removeEventListener("click", addMark);
     });
