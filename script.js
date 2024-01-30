@@ -3,7 +3,6 @@ let mark;
 let count = 0;
 let winX = 0;
 let win0 = 0;
-let gameInProgress = true;
 
 function startPlayer(marks) {
     mark = marks;
@@ -12,7 +11,6 @@ function startPlayer(marks) {
 
 function addMark(e) {
     ++count;
-    findWinner();
     e.target.innerText = mark;
     findWinner();
     if (mark === "X") {
@@ -20,7 +18,6 @@ function addMark(e) {
     } else {
         mark = "X";
     }
-    findWinner();
 }
 
 function playGame() {
@@ -52,25 +49,23 @@ function checkConditions(elem) {
             winX = 1;
         } else if (elem === "0") {
             win0 = 1;
-        }    
+        }  
     }  
 }
 
 function findWinner() {
     for (let i = 0; i < divs.length; ++i) {
-        if (divs[i].innerText === "" && gameInProgress) {
-            checkConditions(mark);
-            if (winX === 1) {
-                document.getElementById('winner').innerHTML = `<h2>PlayerX WON!!!</h2>`;
-            } else if (win0 === 1) {
-                document.getElementById('winner').innerHTML = `<h2>Player0 WON!!!</h2>`;
-            } else if (count === 9) {
-                document.getElementById('winner').innerHTML = `<h2>There is no winner...</h2>`;
-            }
-            if (winX === 1 || win0 === 1 || count === 9) {
-                removeEvents();
-            }
+        checkConditions(mark);
+        if (winX === 1) {
+            document.getElementById('winner').innerHTML = `<h2>PlayerX WON!!!</h2>`;
+        } else if (win0 === 1) {
+            document.getElementById('winner').innerHTML = `<h2>Player0 WON!!!</h2>`;
+        } else if (count === 9) {
+            document.getElementById('winner').innerHTML = `<h2>There is no winner...</h2>`;
         }
+    }
+    if (winX === 1 || win0 === 1 || count === 9) {
+        removeEvents();
     }
 }
 
