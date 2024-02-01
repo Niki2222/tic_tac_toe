@@ -51,10 +51,8 @@ function checkConditions(elem) {
 function findWinner() {
     for (let i = 0; i < divs.length; ++i) {
         checkConditions(mark);
-        if (winXOr0 === "X") {
-            document.getElementById('winner').innerHTML = `<h2>PlayerX WON!!!</h2>`;
-        } else if (winXOr0 === "0") {
-            document.getElementById('winner').innerHTML = `<h2>Player0 WON!!!</h2>`;
+        if (winXOr0 !== "") {
+            document.getElementById('winner').innerHTML = `<h2>Player${winXOr0} WON!!!</h2>`;
         } else if (count === 9) {
             document.getElementById('winner').innerHTML = `<h2>There is no winner...</h2>`;
         }
